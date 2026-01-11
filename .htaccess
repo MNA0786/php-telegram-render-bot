@@ -1,12 +1,11 @@
-# Enable Rewrite
-RewriteEngine On
-
-# Redirect all requests to index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php [QSA,L]
-
-# Optional: prevent access to storage files
+# Protect sensitive files
 <FilesMatch "users.json|error.log">
     Order Allow,Deny
     Deny from all
 </FilesMatch>
+
+# Optional: you can add more file protections here
+# <FilesMatch "\.(env|ini|json)$">
+#     Order Allow,Deny
+#     Deny from all
+# </FilesMatch>
