@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set("log_errors", 1);
 ini_set("error_log", "error.log");
 
-$BOT_TOKEN = "PASTE_YOUR_BOT_TOKEN";
+$BOT_TOKEN = getenv("BOT_TOKEN");
 $API_URL = "https://api.telegram.org/bot$BOT_TOKEN/";
 $usersFile = "users.json";
 
