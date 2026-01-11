@@ -1,0 +1,9 @@
+RewriteEngine On
+<Files "users.json">
+  Order allow,deny
+  Deny from all
+</Files>
+<Files "error.log">
+  Order allow,deny
+  Deny from all
+</Files>
