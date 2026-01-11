@@ -1,12 +1,12 @@
-DirectoryIndex index.php
+# Enable Rewrite
 RewriteEngine On
 
-<Files "users.json">
-  Order allow,deny
-  Deny from all
-</Files>
+# Redirect all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
 
-<Files "error.log">
-  Order allow,deny
-  Deny from all
-</Files>
+# Optional: prevent access to storage files
+<FilesMatch "users.json|error.log">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
